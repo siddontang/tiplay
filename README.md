@@ -4,6 +4,11 @@ A toy project to play music (aha, mostly Noise in fact) through Prometheus metri
 
 This project is inspired by [prometheus_video_renderer](https://github.com/MacroPower/prometheus_video_renderer). 
 
+## Notice
+
+- I haven't tuned a good way for the audio sample, so maybe you won't hear any sound. I run the benchmark for a long time(1h+), and can hear the noise.
+- Don't test this in the office, you may disturb your colleagues.
+
 ## Usage
 
 ### Build 
@@ -57,7 +62,7 @@ tiup bench tpcc --warehouses 4 prepare
 tiup bench tpcc --warehouses 4 run
 ```
 
-### 24h later...
+### Long time later...
 
 ```bash
 tiplay -prom_url http://127.0.0.1:50344 -track "sum(rate(tidb_executor_statement_total[1m])) by (type)"
